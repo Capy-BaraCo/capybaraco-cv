@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repo Setup — CV Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        h2 {
+            color: #1a1a1a;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            border-left: 4px solid #22c55e;
+            padding-left: 1rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        a {
+            color: #22c55e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #16a34a;
+            text-decoration: underline;
+        }
+
+        .code-block {
+            background: #f8f8f8;
+            border-left: 3px solid #22c55e;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+
+        .os-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .os-tab {
+            padding: 0.5rem 1rem;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.2s;
+        }
+
+        .os-tab:hover {
+            background: #e8e8e8;
+            border-color: #22c55e;
+        }
+
+        .os-tab.active {
+            background: #22c55e;
+            color: white;
+            border-color: #22c55e;
+        }
+
+        .os-content {
+            display: none;
+        }
+
+        .os-content.active {
+            display: block;
+        }
+
+        .checklist {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            color: #92400e;
+        }
+
+        .note strong {
+            color: #b45309;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #22c55e;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #16a34a;
+        }
+
+        .button-secondary {
+            background: #6b7280;
+        }
+
+        .button-secondary:hover {
+            background: #4b5563;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
+            color: #999;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 GitHub Repo Setup</h1>
+        <p class="subtitle">Terminal-inspired CV site for capybaraco.xyz</p>
+
+        <!-- Step 1 -->
+        <h2>Step 1: Create a GitHub Account</h2>
+        <p>If you don't already have a GitHub account, create one now:</p>
+        <p style="text-align: center; margin: 1.5rem 0;">
+            <a href="https://github.com/signup" class="button">→ Go to GitHub Signup</a>
+        </p>
+        <p>Register with your <strong>main email address</strong>, verify it, and note your <strong>username</strong> — you'll need it below.</p>
+
+        <!-- Step 2 -->
+        <h2>Step 2: Install the <code>gh</code> CLI</h2>
+        <p>Select your operating system and run the appropriate command:</p>
+
+        <div class="os-selector">
+            <button class="os-tab active" onclick="switchOS('macos')">macOS</button>
+            <button class="os-tab" onclick="switchOS('ubuntu')">Ubuntu / Debian</button>
+            <button class="os-tab" onclick="switchOS('fedora')">Fedora</button>
+            <button class="os-tab" onclick="switchOS('windows')">Windows</button>
+        </div>
+
+        <div id="macos" class="os-content active">
+            <div class="code-block">brew install gh</div>
+        </div>
+
+        <div id="ubuntu" class="os-content">
+            <div class="code-block">sudo apt update && sudo apt install gh</div>
+        </div>
+
+        <div id="fedora" class="os-content">
+            <div class="code-block">sudo dnf install gh</div>
+        </div>
+
+        <div id="windows" class="os-content">
+            <div class="code-block">choco install gh</div>
+        </div>
+
+        <p style="margin-top: 1.5rem;">Once installed, verify it works:</p>
+        <div class="code-block">gh --version</div>
+
+        <!-- Step 3 -->
+        <h2>Step 3: Authenticate <code>gh</code> with GitHub</h2>
+        <p>Run this command and follow the interactive prompts:</p>
+        <div class="code-block">gh auth login</div>
+
+        <p><strong>When prompted:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li>"<strong>What is your preferred protocol for Git operations?</strong>" → Choose <code>HTTPS</code></li>
+            <li>"<strong>Authenticate Git with your GitHub credentials?</strong>" → Choose <code>Yes</code></li>
+            <li>"<strong>How would you like to authenticate GitHub CLI?</strong>" → Choose <code>Login with a web browser</code></li>
+        </ul>
+
+        <p>A browser window will open for you to authorize the CLI. Once complete, verify:</p>
+        <div class="code-block">gh auth status</div>
+
+        <p>You should see your GitHub username and a checkmark (✓).</p>
+
+        <!-- Step 4 -->
+        <h2>Step 4: Set Your Local Git Identity</h2>
+        <p>Configure git with your name and email (must match your GitHub account):</p>
+        <div class="code-block">git config --global user.name "Aaron Paterson"
+git config --global user.email "aaron.paterson@capybaraco.co.uk"</div>
+
+        <p>Verify:</p>
+        <div class="code-block">git config --global user.name
+git config --global user.email</div>
+
+        <!-- Step 5 -->
+        <h2>Step 5: Initialize Git & Create the Remote Repo</h2>
+        <p>Navigate to your project folder:</p>
+        <div class="code-block">cd /home/sleepysleepy/website-cv</div>
+
+        <p>Initialize git:</p>
+        <div class="code-block">git init</div>
+
+        <p>Create the remote repo on GitHub (public):</p>
+        <div class="code-block">gh repo create capybaraco-cv --public --remote=origin --source=. --remote-name=origin --push=false</div>
+
+        <p>Verify the remote is set:</p>
+        <div class="code-block">git remote -v</div>
+
+        <p>You should see two lines showing <code>origin</code> with your GitHub username.</p>
+
+        <!-- Step 6 -->
+        <h2>Step 6 (Optional): Set the Repo About Link</h2>
+        <p>Once the repo is created, visit your repo on GitHub and fill in the <strong>About</strong> section (top right):</p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li><strong>Description:</strong> "Terminal-inspired CV site"</li>
+            <li><strong>Website:</strong> <code>https://www.capybaraco.xyz</code></li>
+            <li><strong>Topics:</strong> <code>portfolio</code>, <code>cv</code>, <code>react</code>, <code>vite</code>, <code>terminal</code></li>
+        </ul>
+
+        <p style="margin-top: 1.5rem;">
+            <a href="https://github.com/your-username/capybaraco-cv" class="button button-secondary">View Your Repo</a>
+        </p>
+
+        <!-- Final Step -->
+        <div class="checklist">
+            <h3 style="color: #1a1a1a; margin-bottom: 1rem;">✓ You're Ready!</h3>
+            <ul>
+                <li><code>gh auth status</code> shows you're logged in</li>
+                <li><code>git remote -v</code> shows your remote is set</li>
+                <li>Your repo is live on GitHub (public)</li>
+            </ul>
+            <p style="margin-top: 1rem; color: #555;">
+                <strong>Next:</strong> Tell Claude Code you've completed these steps, and it will scaffold the project, commit, and push the initial code.
+            </p>
+        </div>
+
+        <div class="note">
+            <strong>💡 Note:</strong> If you hit any issues during authentication or remote creation, check that:
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>You're using the correct GitHub username</li>
+                <li>Your GitHub account email is verified</li>
+                <li>Your local email matches your GitHub account</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Once you complete all steps, return here and tell Claude Code you're ready to proceed.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchOS(os) {
+            // Hide all
+            document.querySelectorAll('.os-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.os-tab').forEach(el => el.classList.remove('active'));
+
+            // Show selected
+            document.getElementById(os).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
