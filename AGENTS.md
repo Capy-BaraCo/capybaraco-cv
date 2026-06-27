@@ -99,7 +99,12 @@ effect (download, open tab, clear). `runCommand.ts` parses input and normalises
 
 ## Status (2026-06-27)
 
-Built: scaffold, terminal core, static `cv.html`/`cv.pdf`/favicon/robots, SEO
-meta. **Not yet done:** premium Landing screen, motion layer (`useTypewriter`,
-`useInViewReveal`, `MatrixBackground`), `og-image.svg`, README/nginx, in-repo
-`PLAN.md`/`SPRINT-LOG.md`. `App.tsx` currently renders only Terminal + Footer.
+Built: scaffold (Sprint 0), premium Landing (Sprint 1), terminal core
+(Sprint 2), motion layer — `useTypewriter`/`useInViewReveal`/`MatrixBackground`
+(Sprint 3), static `cv.html`/`cv.pdf`/favicon/robots, SEO/OG meta. `App.tsx`
+renders MatrixBackground + Landing + (RevealOnScroll→Terminal) + Footer.
+
+**Not yet done:** `og-image.svg` + `og:image`/`canonical` meta (Sprint 4/5),
+a11y + responsive hardening pass and visual smoke test (Sprint 5),
+README/`nginx.capybaraco.conf` and the in-repo `PLAN.md`/`SPRINT-LOG.md`
+process artifacts (Sprint 6). No visual QA has been run yet — only build+lint.
