@@ -1,0 +1,27 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--space-lg));
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * Reduced motion: the hook reveals content immediately, but guard the visuals
+ * too so content is never hidden and nothing animates. Fully visible, no
+ * transform, no transition.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}

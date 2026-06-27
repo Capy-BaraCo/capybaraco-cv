@@ -32,8 +32,12 @@
 
   /* Other */
   --border-radius: 4px;
+  --z-background: -1;
   --z-terminal: 10;
   --z-modal: 100;
+
+  /* Matrix ambient background — soft accent green, kept deliberately faint */
+  --matrix-color: 34, 197, 94;
 }
 
 @media (prefers-reduced-motion: reduce) {

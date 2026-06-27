@@ -1,7 +1,12 @@
 .app {
+  position: relative;
+  /* Establish a stacking context so content layers above the fixed
+     MatrixBackground canvas (which sits at --z-background, behind everything). */
+  z-index: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--color-bg);
+  /* Background is transparent so the ambient Matrix canvas shows through;
+     the opaque black comes from body / #root underneath. */
   color: var(--color-fg);
 }
