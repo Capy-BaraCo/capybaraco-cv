@@ -40,8 +40,8 @@ Lint runs with `--max-warnings 0`; `tsconfig` has `noUnusedLocals`/
 
 ```
 public/            # static, shipped as-is
-  cv.html          # standalone printable HTML CV (JS-free)
-  assets/cv.pdf    # placeholder PDF (replace with real CV)
+  cv.html          # GITIGNORED — your real HTML CV, kept local only
+  assets/cv.pdf    # GITIGNORED — your real CV PDF, kept local only
   favicon.svg, robots.txt
 src/
   main.tsx, App.tsx
@@ -53,6 +53,12 @@ src/
     Terminal/      # shell UI, input, output, chips, history
     Footer/        # contact + minimal footer
 ```
+
+> **Private CV files.** `public/cv.html` and `public/assets/cv.pdf` are
+> **gitignored** — the repo is public, so the real CV is never committed. The
+> app references them only by URL (`/cv.html`, `/assets/cv.pdf` in
+> `terminal/commands.ts`), so place your real copies in `public/` locally for
+> dev/build; on a fresh clone these links 404 until you add them.
 
 ## Conventions
 

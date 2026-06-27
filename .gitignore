@@ -35,3 +35,8 @@ pnpm-debug.log*
 # Local scratch assets (design references, Claude local settings)
 .claude/*.zip
 .claude/settings.local.json
+
+# Personal CV — never commit to the public repo. Served at runtime by URL
+# (/cv.html, /assets/cv.pdf); keep your real copies here locally for dev/build.
+/public/cv.html
+/public/assets/cv.pdf
