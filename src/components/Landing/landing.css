@@ -1,0 +1,160 @@
+.landing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.landing-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: 48rem;
+}
+
+/* Eyebrow: terminal-prompt motif, mono; accent used sparingly on the glyph */
+.landing-prompt {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
+}
+
+.landing-prompt-glyph {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-right: var(--space-xs);
+}
+
+/* Name: the primary element. Sans, confident, restrained. */
+.landing-name {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+}
+
+/* Role: muted mono, with a thin blinking accent caret after it */
+.landing-role {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-lg);
+  color: var(--color-fg);
+}
+
+.landing-role::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: var(--space-xs);
+  background: var(--color-accent);
+  animation: landingCaretBlink 1.1s steps(1) infinite;
+}
+
+@keyframes landingCaretBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Summary: supporting line, muted */
+.landing-summary {
+  margin: 0;
+  max-width: 38rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-secondary);
+}
+
+/* Scroll cue: restrained, slow bob, accessible link to the terminal */
+.landing-scroll-cue {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--color-secondary);
+  transition: color var(--transition-base);
+}
+
+.landing-scroll-cue:hover,
+.landing-scroll-cue:focus-visible {
+  color: var(--color-accent);
+}
+
+.landing-scroll-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.landing-scroll-chevron {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  animation: landingBob 2.4s ease-in-out infinite;
+}
+
+@keyframes landingBob {
+  0%,
+  100% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(45deg) translate(3px, 3px);
+  }
+}
+
+/* Reduced motion: section stays fully professional with all motion off */
+@media (prefers-reduced-motion: reduce) {
+  .landing-role::after {
+    animation: none;
+    opacity: 1;
+  }
+
+  .landing-scroll-chevron {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .landing-inner {
+    gap: var(--space-md);
+  }
+
+  .landing-summary {
+    font-size: var(--font-size-sm);
+  }
+}
