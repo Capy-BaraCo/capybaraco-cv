@@ -40,9 +40,12 @@ ENVFILES=$(printf '%s\n' "$FILES" | grep -E '(^|/)\.env($|\.)' | grep -vE '\.exa
 KEYFILES=$(printf '%s\n' "$FILES" | grep -E '\.(pem|key|p12|pfx|keystore)$' || true)
 [ -n "$KEYFILES" ] && fail "tracked key/cert file(s): $KEYFILES" || pass "no tracked key/cert files"
 
-# Secret patterns in history (cheap heuristic across all commits)
-HIST=$(git log -p --all -S 'PRIVATE KEY' --pretty=format: 2>/dev/null | grep -c 'PRIVATE KEY' || true)
-[ "${HIST:-0}" -gt 0 ] && warn "the string 'PRIVATE KEY' appears in git history — review before publishing" || pass "no 'PRIVATE KEY' string in history"
+# Secret patterns in history (cheap heuristic across all commits).
+# Exclude docs and security tooling, which legitimately *describe* the patterns.
+HIST=$(git log -p --all -S 'PRIVATE KEY' --pretty=format: -- . \
+  ':(exclude)*.md' ':(exclude).claude/skills/*/scripts/*' 2>/dev/null \
+  | grep -c 'PRIVATE KEY' || true)
+[ "${HIST:-0}" -gt 0 ] && warn "the string 'PRIVATE KEY' appears in git history (outside docs) — review before publishing" || pass "no 'PRIVATE KEY' string in history (docs excluded)"
 
 # ----------------------------------------------------------------------------
 hdr "2. Build artifacts & junk committed"
