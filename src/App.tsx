@@ -9,13 +9,13 @@ export default function App() {
   return (
     <>
       <MatrixBackground />
-      <div className="app">
+      <main className="app">
         <Landing />
         <RevealOnScroll id="terminal">
           <Terminal />
         </RevealOnScroll>
         <Footer />
-      </div>
+      </main>
     </>
   )
 }

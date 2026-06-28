@@ -5,6 +5,7 @@ import { useCommandHistory } from '../../hooks/useCommandHistory'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import TerminalOutput from './TerminalOutput'
 import TerminalInput from './TerminalInput'
+import TerminalChips from './TerminalChips'
 import './terminal.css'
 
 export default function Terminal() {
@@ -69,7 +70,7 @@ export default function Terminal() {
   }, [output])
 
   return (
-    <div className="terminal" role="main" aria-label="Terminal interface">
+    <div className="terminal" role="region" aria-label="Interactive terminal">
       <div className="terminal-header">
         <span className="terminal-title">terminal</span>
         <span className="terminal-user">user@capybaraco</span>
@@ -80,6 +81,8 @@ export default function Terminal() {
         output={output}
         prefersReducedMotion={prefersReducedMotion}
       />
+
+      <TerminalChips onCommand={handleCommand} disabled={isProcessing} />
 
       <TerminalInput
         onCommand={handleCommand}
