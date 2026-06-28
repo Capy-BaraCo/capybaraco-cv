@@ -118,6 +118,12 @@ command chips); commands are single-token (`cv --download-pdf`, `cv --view-html`
 `README.md` ships a branded, forkable overview (see the `capybaraco-docs` agent
 and `capybaraco-brand-docs` skill under `.claude/`).
 
+Tooling: Vitest unit tests for the command parser (`src/terminal/runCommand.test.ts`,
+run with `npm test`); GitHub Actions CI (`.github/workflows/ci.yml`) runs
+lint · test · build on every push/PR. Test files are excluded from the
+production `tsc -b` via `tsconfig.json`.
+
 **Not yet done:** `nginx.capybaraco.conf` and the in-repo `PLAN.md`/
 `SPRINT-LOG.md` process artifacts (Sprint 6). Visual smoke test run via local
-dev server; no automated visual QA yet.
+dev server; no automated visual QA yet. Recorded terminal GIF for the README
+hero still pending (og-image.svg used as placeholder).

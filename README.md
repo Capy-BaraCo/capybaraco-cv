@@ -2,12 +2,15 @@
 
 > A terminal-inspired personal CV — premium and minimalist on first load, then a real, typeable terminal that serves up the CV on command.
 
-![build](https://img.shields.io/badge/build-passing-22c55e?style=flat-square&labelColor=000000)
+**[▶ Live demo — www.capybaraco.xyz](https://www.capybaraco.xyz)**
+
+[![CI](https://github.com/Capy-BaraCo/capybaraco-cv/actions/workflows/ci.yml/badge.svg)](https://github.com/Capy-BaraCo/capybaraco-cv/actions/workflows/ci.yml)
+![tests](https://img.shields.io/badge/tests-vitest-22c55e?style=flat-square&labelColor=000000)
 ![license](https://img.shields.io/badge/license-MIT-22c55e?style=flat-square&labelColor=000000)
 ![stack](https://img.shields.io/badge/stack-Vite%20%2B%20React%20%2B%20TS-22c55e?style=flat-square&labelColor=000000)
-![motion](https://img.shields.io/badge/motion-hand--rolled-22c55e?style=flat-square&labelColor=000000)
 
-![Terminal CV preview — Aaron Paterson, Systems Support Engineer, on a black terminal mockup with green accents](public/og-image.svg)
+<!-- Hero: og-image.svg doubles as the share card. Swap for a recorded terminal GIF when available. -->
+[![Terminal CV preview — Aaron Paterson, Systems Support Engineer, on a black terminal mockup with green accents](public/og-image.svg)](https://www.capybaraco.xyz)
 
 ## Contents
 
@@ -46,7 +49,8 @@ The default loadout, no filler:
 - **No animation libraries** — motion is hand-written hooks plus `<canvas>`.
 - **Typography**: `Monaco` / `Menlo` / `Ubuntu Mono` / `Courier New` monospace,
   with a system sans fallback.
-- **Tooling**: ESLint (`--max-warnings 0`), `tsc` in strict mode. Node 22, npm.
+- **Tooling**: ESLint (`--max-warnings 0`), `tsc` strict, Vitest unit tests, and
+  GitHub Actions CI (lint · test · build). Node 22, npm.
 
 ## Getting started
 
@@ -64,6 +68,7 @@ Other scripts:
 ```bash
 $ npm run build     # tsc -b && vite build  ->  dist/
 $ npm run lint      # eslint, warnings fail the run
+$ npm test          # vitest — unit tests for the command parser
 $ npm run preview   # serve the production build
 ```
 
@@ -144,9 +149,10 @@ These ship in every change — the boss fight is keeping them all true at once:
 ## Contributing
 
 Conventions, architecture notes, and the sprint log live in
-[`AGENTS.md`](AGENTS.md). Both `npm run build` and `npm run lint` must pass clean
-before any commit — lint runs with `--max-warnings 0`, and `tsconfig` strictness
-treats dead imports and unused params as errors.
+[`AGENTS.md`](AGENTS.md). `npm run lint`, `npm test`, and `npm run build` must
+pass clean before any commit — lint runs with `--max-warnings 0`, and `tsconfig`
+strictness treats dead imports and unused params as errors. The same three gates
+run on every push via [GitHub Actions](.github/workflows/ci.yml).
 
 ## License
 
