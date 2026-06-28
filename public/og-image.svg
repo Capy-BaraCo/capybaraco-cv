@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#000000"/>
+
+  <!-- Subtle grid lines -->
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Terminal window chrome -->
+  <rect x="80" y="100" width="1040" height="430" rx="6" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="1"/>
+
+  <!-- Terminal header bar -->
+  <rect x="80" y="100" width="1040" height="44" rx="6" fill="#1a1a1a"/>
+  <rect x="80" y="130" width="1040" height="14" fill="#1a1a1a"/>
+
+  <!-- Window dots -->
+  <circle cx="110" cy="122" r="7" fill="#ef4444" opacity="0.7"/>
+  <circle cx="134" cy="122" r="7" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="158" cy="122" r="7" fill="#22c55e" opacity="0.7"/>
+
+  <!-- Terminal title text -->
+  <text x="600" y="127" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="13" fill="#888888" text-anchor="middle" letter-spacing="2">terminal</text>
+
+  <!-- User info in header -->
+  <text x="1090" y="127" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="12" fill="#22c55e" text-anchor="end">user@capybaraco</text>
+
+  <!-- Content area: prompt + whoami -->
+  <text x="116" y="192" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="18" fill="#22c55e">$</text>
+  <text x="140" y="192" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="18" fill="#f5f5f5"> whoami</text>
+
+  <!-- Name — large, prominent -->
+  <text x="116" y="268" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="52" fill="#f5f5f5" font-weight="normal" letter-spacing="-0.5">Aaron Paterson</text>
+
+  <!-- Role line -->
+  <text x="116" y="318" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="20" fill="#22c55e">Full-Stack Developer</text>
+
+  <!-- Divider line -->
+  <line x1="116" y1="348" x2="680" y2="348" stroke="#2a2a2a" stroke-width="1"/>
+
+  <!-- Summary text -->
+  <text x="116" y="382" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="15" fill="#888888">Full-stack developer with a passion for elegant, functional design.</text>
+  <text x="116" y="406" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="15" fill="#888888">Specializing in modern web technologies and terminal-first experiences.</text>
+
+  <!-- Command hints -->
+  <text x="116" y="460" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="14" fill="#22c55e">$</text>
+  <text x="138" y="460" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="14" fill="#444444"> cv --help  ·  cv --download pdf  ·  contact --show</text>
+
+  <!-- Blinking caret hint -->
+  <rect x="116" y="492" width="10" height="20" fill="#22c55e" opacity="0.8"/>
+
+  <!-- URL watermark -->
+  <text x="1100" y="566" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="14" fill="#444444" text-anchor="end">www.capybaraco.xyz</text>
+</svg>
