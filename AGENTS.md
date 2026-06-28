@@ -103,14 +103,21 @@ effect (download, open tab, clear). `runCommand.ts` parses input and normalises
   scratch (`.claude/*.zip`, `.claude/settings.local.json`, `*:Zone.Identifier`)
   are gitignored — never commit them.
 
-## Status (2026-06-27)
+## Status (2026-06-28)
 
 Built: scaffold (Sprint 0), premium Landing (Sprint 1), terminal core
 (Sprint 2), motion layer — `useTypewriter`/`useInViewReveal`/`MatrixBackground`
-(Sprint 3), static `cv.html`/`cv.pdf`/favicon/robots, SEO/OG meta. `App.tsx`
+(Sprint 3), static `cv.html`/`cv.pdf`/favicon/robots, SEO/OG meta, `og-image.svg`
++ `og:image`/`twitter:image`/`canonical` (Sprint 4), a11y hardening — `<main>`
+landmark, `whoami` driven by `profile.role`/`profile.bio` (Sprint 5). `App.tsx`
 renders MatrixBackground + Landing + (RevealOnScroll→Terminal) + Footer.
 
-**Not yet done:** `og-image.svg` + `og:image`/`canonical` meta (Sprint 4/5),
-a11y + responsive hardening pass and visual smoke test (Sprint 5),
-README/`nginx.capybaraco.conf` and the in-repo `PLAN.md`/`SPRINT-LOG.md`
-process artifacts (Sprint 6). No visual QA has been run yet — only build+lint.
+Identity is **Systems Support Engineer** (landing) / **Systems Administrator &
+Technical Support Engineer** (`whoami`). Terminal is **type-to-interact** (no
+command chips); commands are single-token (`cv --download-pdf`, `cv --view-html`).
+`README.md` ships a branded, forkable overview (see the `capybaraco-docs` agent
+and `capybaraco-brand-docs` skill under `.claude/`).
+
+**Not yet done:** `nginx.capybaraco.conf` and the in-repo `PLAN.md`/
+`SPRINT-LOG.md` process artifacts (Sprint 6). Visual smoke test run via local
+dev server; no automated visual QA yet.
