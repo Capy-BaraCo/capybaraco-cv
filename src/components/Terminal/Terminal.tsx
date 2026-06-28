@@ -5,7 +5,6 @@ import { useCommandHistory } from '../../hooks/useCommandHistory'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import TerminalOutput from './TerminalOutput'
 import TerminalInput from './TerminalInput'
-import TerminalChips from './TerminalChips'
 import './terminal.css'
 
 export default function Terminal() {
@@ -81,8 +80,6 @@ export default function Terminal() {
         output={output}
         prefersReducedMotion={prefersReducedMotion}
       />
-
-      <TerminalChips onCommand={handleCommand} disabled={isProcessing} />
 
       <TerminalInput
         onCommand={handleCommand}

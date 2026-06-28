@@ -2,7 +2,7 @@ import { profile } from '../../data/profile'
 import './landing.css'
 
 // EDIT ME: role line — single placeholder role shown under the name.
-const ROLE = 'Full-Stack Developer'
+const ROLE = 'Systems Support Engineer'
 
 export default function Landing() {
   return (

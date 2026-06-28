@@ -31,18 +31,18 @@
   <text x="116" y="268" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="52" fill="#f5f5f5" font-weight="normal" letter-spacing="-0.5">Aaron Paterson</text>
 
   <!-- Role line -->
-  <text x="116" y="318" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="20" fill="#22c55e">Full-Stack Developer</text>
+  <text x="116" y="318" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="20" fill="#22c55e">Systems Admin / Support Engineer</text>
 
   <!-- Divider line -->
   <line x1="116" y1="348" x2="680" y2="348" stroke="#2a2a2a" stroke-width="1"/>
 
   <!-- Summary text -->
-  <text x="116" y="382" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="15" fill="#888888">Full-stack developer with a passion for elegant, functional design.</text>
-  <text x="116" y="406" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="15" fill="#888888">Specializing in modern web technologies and terminal-first experiences.</text>
+  <text x="116" y="382" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="15" fill="#888888">5+ years across SME and enterprise — Microsoft 365, identity and</text>
+  <text x="116" y="406" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="15" fill="#888888">virtualised infrastructure. Now building full-stack, AI-integrated tooling.</text>
 
   <!-- Command hints -->
   <text x="116" y="460" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="14" fill="#22c55e">$</text>
-  <text x="138" y="460" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="14" fill="#444444"> cv --help  ·  cv --download pdf  ·  contact --show</text>
+  <text x="138" y="460" font-family="Monaco, Menlo, 'Courier New', monospace" font-size="14" fill="#444444"> cv --help  ·  cv --download-pdf  ·  contact --show</text>
 
   <!-- Blinking caret hint -->
   <rect x="116" y="492" width="10" height="20" fill="#22c55e" opacity="0.8"/>

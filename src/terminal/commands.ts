@@ -12,8 +12,8 @@ const commands: Command[] = [
         '┌─ Available Commands ─────────────────────────────────────┐',
         '│                                                          │',
         '│  cv --help              Show CV-related commands         │',
-        '│  cv --download pdf      Download CV as PDF              │',
-        '│  cv --view html         View CV in HTML format          │',
+        '│  cv --download-pdf      Download CV as PDF              │',
+        '│  cv --view-html         View CV in HTML format          │',
         '│  contact --show         Display contact information     │',
         '│  portfolio --help       Show portfolio information      │',
         '│  whoami                 Display current user info       │',
@@ -29,7 +29,7 @@ const commands: Command[] = [
   {
     name: 'cv',
     description: 'Manage your CV',
-    usage: 'cv [--help | --download pdf | --view html]',
+    usage: 'cv [--help | --download-pdf | --view-html]',
     handler: (args) => {
       const subcommand = args[0]
 
@@ -43,18 +43,18 @@ const commands: Command[] = [
             '',
             'Options:',
             '  --help              Show this help message',
-            '  --download pdf      Download your CV as a PDF file',
-            '  --view html         View your CV in HTML format',
+            '  --download-pdf      Download your CV as a PDF file',
+            '  --view-html         View your CV in HTML format',
             '',
             'Examples:',
             '  $ cv --help',
-            '  $ cv --download pdf',
-            '  $ cv --view html',
+            '  $ cv --download-pdf',
+            '  $ cv --view-html',
           ],
         }
       }
 
-      if (subcommand === '--download' && args[1] === 'pdf') {
+      if (subcommand === '--download-pdf') {
         // The actual download is performed by the React layer via this action,
         // keeping the handler free of DOM side-effects.
         return {
@@ -68,7 +68,7 @@ const commands: Command[] = [
         }
       }
 
-      if (subcommand === '--view' && args[1] === 'html') {
+      if (subcommand === '--view-html') {
         return {
           success: true,
           output: 'Opening CV in new tab...',
@@ -139,8 +139,9 @@ const commands: Command[] = [
       success: true,
       output: [
         `${profile.name} <${profile.email}>`,
+        profile.role,
         '',
-        `Summary: ${profile.summary}`,
+        ...profile.bio,
       ],
     }),
   },
